@@ -1,0 +1,423 @@
+Acura,ILX,Combustion,Sedan,FWD,28,201,25950
+Acura,NSX,Combustion,Sports Car,AWD,22,573,157500
+Acura,RLX,Combustion,Sedan,FWD,23,310,54900
+Acura,RLX Sport Hybrid,Hybrid,Sedan,AWD,28,310,61900
+Acura,TLX,Combustion,Sedan,AWD,23,272,37500
+Acura,MDX,Combustion,SUV,AWD,22,290,44500
+Acura,MDX Sport Hybrid,Hybrid,SUV,AWD,26,321,53000
+Acura,RDX,Combustion,SUV,AWD,23,272,38200
+Alfa-Romeo,Stelvio,Combustion,SUV,RWD,25,505,41450
+Alfa-Romeo,Giulia,Combustion,Sedan,RWD,26,505,39450
+Alfa-Romeo,4C Spider,Combustion,Sports Car,RWD,28,237,67150
+Alfa-Romeo,Stelvio Quadrifoglio,Combustion,SUV,AWD,20,505,80750
+Alfa-Romeo,Giulia Quadrifoglio,Combustion,Sedan,AWD,24,505,74500
+Aston-Martin,DBX,Combustion,SUV,AWD,20,542,189900
+Aston-Martin,Vantage,Combustion,Sports Car,RWD,20,503,146000
+Aston-Martin,DB11,Combustion,Sports Car,RWD,18,503,205600
+Aston-Martin,Volante,Combustion,Convertible,RWD,20,503,201820
+Aston-Martin,DB11 AMR,Combustion,Sports Car,RWD,18,630,241000
+Aston-Martin,DBS Superleggera,Combustion,Sports Car,RWD,18,715,316300
+Aston-Martin,Superleggera Volante,Combustion,Convertible,RWD,17,715,334700
+Aston-Martin,Rapide AMR,Combustion,Sports Car,RWD,17,580,240000
+Audi,Q3,Combustion,Crossover,AWD,22,228,36000
+Audi,Q5,Combustion,Crossover,AWD,24,248,43300
+Audi,Q7,Combustion,SUV,AWD,21,248,54950
+Audi,Q8,Combustion,SUV,AWD,18,335,68200
+Audi,e-tron,Electric,SUV,AWD,222,355,65900
+Audi,e-tron Sportback,Electric,Sedan,AWD,218,402,69100
+Audi,A3,Combustion,Sedan,AWD,28,184,33000
+Audi,A4,Combustion,Sedan,AWD,30,188,39100
+Audi,A5,Combustion,Sedan,AWD,27,248,41800
+Audi,A5 Cabriolet,Combustion,Convertible,AWD,26,248,55300
+Audi,A6,Combustion,Sedan,AWD,27,248,54900
+Audi,A7,Combustion,Sedan,AWD,24,335,69200
+Audi,A8,Combustion,Sedan,AWD,21,443,86500
+Audi,TT,Combustion,Coupe,AWD,26,220,49800
+Audi,TT Roadster,Combustion,Convertible,AWD,26,228,49000
+Audi,R8,Combustion,Sports Car,AWD,16,562,169000
+Audi,R8 Spyder,Combustion,Convertible,AWD,16,562,182100
+Bentley,Bentayga,Combustion,SUV,AWD,19,443,160000
+Bentley,Mulsanne,Combustion,Sedan,RWD,12,512,310800
+Bentley,Continental GT,Combustion,Coupe,AWD,19,542,202500
+Bentley,Flying Spur,Combustion,Sedan,AWD,15,626,216700
+BMW,X1,Combustion,Crossover,AWD,26,228,35400
+BMW,X2,Combustion,Crossover,AWD,27,228,36600
+BMW,X3,Combustion,Crossover,AWD,26,248,43000
+BMW,X3 M,Combustion,Crossover,AWD,16,473,69900
+BMW,X4,Combustion,Crossover,AWD,23,248,51600
+BMW,X4 M,Combustion,Crossover,AWD,16,473,73400
+BMW,X5,Combustion,SUV,AWD,23,523,59400
+BMW,X5 M,Combustion,SUV,AWD,15,567,105100
+BMW,X6,Combustion,Crossover,AWD,23,523,65050
+BMW,X6 M,Combustion,Crossover,AWD,15,567,108600
+BMW,X7,Combustion,SUV,AWD,22,523,74900
+BMW,3 Series,Combustion,Sedan,RWD,28,255,41250
+BMW,5 Series,Combustion,Sedan,RWD,28,248,54200
+BMW,7 Series,Combustion,Sedan,RWD,23,335,86800
+BMW,M5,Combustion,Sedan,RWD,17,600,103500
+BMW,i3,Electric,Hatchback,RWD,153,170,44450
+BMW,2 Series Coupe,Combustion,Coupe,RWD,28,228,35900
+BMW,2 Series Gran Coupe,Combustion,Coupe,RWD,27,228,37700
+BMW,4 Series Coupe,Combustion,Coupe,RWD,27,255,45600
+BMW,8 Series Coupe,Combustion,Coupe,RWD,20,335,88000
+BMW,8 Series Gran Coupe,Combustion,Coupe,RWD,26,335,85000
+BMW,M2 Competition Coupe,Combustion,Coupe,RWD,20,405,58900
+BMW,M4 Coupe,Combustion,Coupe,RWD,20,425,69150
+BMW,M8 Coupe,Combustion,Coupe,RWD,17,600,133000
+BMW,M8 Gran Coupe,Combustion,Coupe,RWD,17,600,130000
+BMW,2 Series Convertible,Combustion,Convertible,RWD,25,228,41850
+BMW,4 Series Convertible,Combustion,Convertible,RWD,27,255,53100
+BMW,8 Series Convertible,Combustion,Convertible,RWD,20,335,97400
+BMW,M4 Convertible,Combustion,Convertible,RWD,20,425,77650
+BMW,M8 Convertible,Combustion,Convertible,RWD,17,600,142500
+BMW,Z4 Roadster,Combustion,Convertible,RWD,21,255,49700
+Bugatti,Veyron Super Sport,Combustion,Sports Car,AWD,10,1200,2000000
+Bugatti,Chiron,Combustion,Sports Car,AWD,11,1500,3000000
+Buick,Encore,Combustion,Crossover,FWD,27,138,23200
+Buick,Encore GX,Combustion,Crossover,AWD,28,137,24200
+Buick,Encore GX ST,Combustion,Crossover,AWD,28,137,32640
+Buick,Envision,Combustion,Crossover,FWD,25,197,33500
+Buick,Enclave,Combustion,SUV,FWD,22,310,40000
+Buick,Enclave Avenir,Combustion,SUV,FWD,22,310,53800
+Cadillac,XT4,Combustion,Crossover,AWD,24,235,35795
+Cadillac,XT5,Combustion,Crossover,AWD,21,235,43995
+Cadillac,XT6,Combustion,Crossover,AWD,20,235,47995
+Cadillac,Escalade,Combustion,SUV,RWD,17,277,76195
+Cadillac,CT4,Combustion,Sedan,RWD,24,237,33395
+Cadillac,CT5,Combustion,Sedan,RWD,22,237,36995
+Chevrolet,Spark,Combustion,Hatchback,FWD,33,98,13400
+Chevrolet,Malibu,Combustion,Sedan,FWD,30,160,22140
+Chevrolet,Bolt,Electric,Hatchback,FWD,259,200,36500
+Chevrolet,Camaro,Combustion,Sports Car,RWD,19,275,25000
+Chevrolet,Corvette Stingray,Combustion,Sports Car,RWD,22,490,58900
+Chevrolet,Trailblazer,Combustion,SUV,RWD,28,137,19000
+Chevrolet,Trax,Combustion,Minivan,AWD,28,138,21400
+Chevrolet,Equinox,Combustion,Minivan,AWD,34,170,23800
+Chevrolet,Blazer,Combustion,Crossover,AWD,23,193,28800
+Chevrolet,Traverse,Combustion,SUV,AWD,20,310,29800
+Chevrolet,Tahoe,Combustion,SUV,RWD,17,277,49000
+Chevrolet,Suburban,Combustion,SUV,RWD,17,277,51700
+Chevrolet,Colorado,Combustion,Truck,RWD,19,181,25200
+Chevrolet,Silverado,Combustion,Truck,RWD,20,285,47445
+Chrysler,Pacifica,Combustion,Minivan,AWD,22,287,27235
+Chrysler,Pacifica Hybrid,Hybrid,Minivan,FWD,82,260,40245
+Chrysler,300,Combustion,Sedan,RWD,23,292,30445
+Chrysler,Voyager,Combustion,Minivan,AWD,22,287,27235
+Dodge,Charger,Combustion,Sports Car,RWD,19,292,29995
+Dodge,Challenger,Combustion,Sports Car,RWD,17,305,28295
+Dodge,Durango,Combustion,SUV,AWD,21,293,31765
+Dodge,Journey,Combustion,Crossover,AWD,21,173,23675
+Dodge,Grand Caravan,Combustion,Minivan,AWD,20,283,27530
+Ferrari,812 Superfast,Combustion,Sports Car,RWD,13,788,335000
+Ferrari,812 GTS,Combustion,Convertible,RWD,13,789,380000
+Ferrari,SF90 Stradale,Hybrid,Sports Car,RWD,51,986,625000
+Ferrari,F8 Tributo,Combustion,Sports Car,RWD,16,710,276550
+Ferrari,F8 Spider,Combustion,Convertible,RWD,16,710,274280
+Ferrari,488 Pista,Combustion,Sports Car,RWD,17,711,330000
+Ferrari,488 Pista Spider,Combustion,Convertible,RWD,17,711,350000
+Ferrari,GTC4Lusso,Combustion,Sports Car,RWD,17,602,260000
+Ferrari,Roma,Combustion,Sports Car,RWD,19,611,222630
+Ferrari,GTC4Lusso T,Combustion,Sports Car,RWD,17,602,300000
+Ferrari,Portofino M,Combustion,Convertible,RWD,19,612,215000
+Fiat,500X,Combustion,Hatchback,AWD,26,177,24840
+Fiat,500L,Combustion,Hatchback,FWD,25,160,22500
+Fiat,124 Spider,Combustion,Convertible,RWD,30,160,26840
+Fiat,124 Spider Abarth,Combustion,Convertible,RWD,30,164,29290
+Ford,Ecosport,Combustion,SUV,AWD,25,123,19995
+Ford,Escape,Combustion,SUV,AWD,30,181,24885
+Ford,Bronco Sport,Combustion,SUV,AWD,26,181,26660
+Ford,Edge,Combustion,Crossover,AWD,23,250,31100
+Ford,Explorer,Combustion,SUV,RWD,24,300,32225
+Ford,Mustange Mach-E,Electric,Crossover,RWD,300,346,42895
+Ford,Ranger,Combustion,Truck,AWD,23,270,24820
+Ford,F-150,Combustion,Truck,RWD,25,250,28940
+Ford,Super Duty,Combustion,Truck,RWD,16,385,34320
+Ford,Transit,Combustion,Van,RWD,17,162,24655
+Ford,Fusion,Combustion,Sedan,RWD,25,175,23170
+Ford,Mustang,Combustion,Sports Car,RWD,23,310,27155
+Ford,Fusion Hybrid,Hybrid,Sedan,FWD,42,188,28300
+Ford,Escape Hybrid,Hybrid,SUV,AWD,41,181,28300
+Ford,Fusion Energi,Hybrid,Sedan,FWD,103,188,37000
+Genesis,G70,Combustion,Sedan,RWD,20,252,36000
+Genesis,G80,Combustion,Sedan,RWD,25,300,47700
+Genesis,G90,Combustion,Sedan,RWD,20,365,72950
+GMC,Terrain,Combustion,SUV,AWD,27,170,25000
+GMC,Acadia,Combustion,SUV,AWD,21,193,29800
+GMC,Yukon,Combustion,SUV,AWD,18,277,50700
+GMC,Canyon,Combustion,Truck,AWD,23,181,26400
+GMC,Sierra 1500,Combustion,Truck,AWD,19,277,29700
+GMC,Sierra 2500 Heavy Duty,Combustion,Truck,AWD,19,300,59295
+GMC,Sierra 3500 Heavy Duty,Combustion,Truck,AWD,17,353,58395
+GMC,Savana Cargo,Combustion,Van,AWD,16,276,32000
+GMC,Savana Passenger,Combustion,Van,AWD,14,276,36400
+Honda,HR-V,Combustion,Crossover,AWD,28,141,21020
+Honda,CR-V,Combustion,Crossover,AWD,29,190,25150
+Honda,CR-V Hybrid,Hybrid,Crossover,AWD,38,212,27850
+Honda,Pilot,Combustion,SUV,AWD,21,280,32250
+Honda,Passport,Combustion,SUV,AWD,21,280,32590
+Honda,Civic Sedan,Combustion,Sedan,FWD,29,158,21050
+Honda,Insight,Hybrid,Sedan,FWD,52,151,22930
+Honda,Accord,Combustion,Sedan,FWD,33,192,24770
+Honda,Civic Si Sedan,Combustion,Sedan,FWD,32,205,25200
+Honda,Accord Hybrid,Hybrid,Sedan,FWD,48,212,26370
+Honda,Clarity Plug-In Hybrid,Hybrid,Sedan,FWD,42,212,33400
+Honda,Clarity Fuel Cell,Hydrogen,Sedan,FWD,360,174,58490
+Honda,Fit,Combustion,Hatchback,AWD,36,128,16190
+Honda,Civic Hatchback,Combustion,Hatchback,FWD,36,180,22000
+Honda,Civic Type R,Combustion,Hatchback,FWD,25,306,37496
+Honda,Civic Coupe,Combustion,Coupe,FWD,34,158,21050
+Honda,Civic Si Coupe,Combustion,Coupe,FWD,32,205,25200
+Honda,Odyssey,Combustion,Minivan,FWD,22,280,31790
+Honda,Ridgeline,Combustion,Truck,AWD,22,280,33900
+Hyundai,VENUE,Combustion,SUV,FWD,33,121,18750
+Hyundai,KONA,Combustion,SUV,AWD,33,147,20400
+Hyundai,KONA Electric,Electric,SUV,FWD,258,201,37190
+Hyundai,TUCSON,Combustion,SUV,FWD,28,161,23700
+Hyundai,SANTA FE,Combustion,SUV,FWD,29,185,26275
+Hyundai,PALISADE,Combustion,SUV,FWD,26,291,32525
+Hyundai,NEXO Fuel Cell,Hydrogen,SUV,FWD,380,161,58735
+Hyundai,ACCENT,Combustion,Sedan,FWD,41,120,15395
+Hyundai,ELANTRA,Combustion,Sedan,FWD,43,147,19650
+Hyundai,SONATA,Combustion,Sedan,FWD,38,180,23600
+Hyundai,SONATA Hybrid,Hybrid,Sedan,FWD,54,192,27750
+Hyundai,SONATA Plug-in Hybrid,Hybrid,Sedan,FWD,39,202,33400
+Hyundai,IONIQ Hybrid,Hybrid,Hatchback,FWD,59,139,23200
+Hyundai,IONIQ Plug-in Hybrid,Hybrid,Hatchback,FWD,52,139,26500
+Hyundai,IONIQ Electric,Electric,Hatchback,FWD,170,134,33045
+Hyundai,VELOSTER,Combustion,Hatchback,FWD,34,147,18900
+Hyundai,VELOSTER N,Combustion,Hatchback,FWD,28,275,32250
+Hyundai,ELANTRA GT,Combustion,Hatchback,FWD,32,161,20650
+Infiniti,Q50,Combustion,Sedan,RWD,23,300,36600
+Infiniti,Q60,Combustion,Coupe,RWD,24,300,41650
+Infiniti,QX50,Combustion,Crossover,AWD,26,268,37950
+Infiniti,QX60,Combustion,Crossover,AWD,22,295,44350
+Infiniti,QX80,Combustion,SUV,AWD,15,400,69050
+Jaguar,F-Pace,Combustion,SUV,AWD,20,247,45200
+Jaguar,E-Pace,Combustion,Crossover,AWD,24,246,39950
+Jaguar,I-Pace,Electric,SUV,AWD,234,394,69850
+Jaguar,F-Type,Combustion,Sports Car,AWD,26,296,61600
+Jaguar,XE,Combustion,Sedan,RWD,28,247,39900
+Jaguar,XF,Combustion,Sedan,AWD,27,247,51100
+Jeep,Wrangler,Combustion,SUV,AWD,23,260,28315
+Jeep,Grand Cherokee,Combustion,SUV,AWD,17,293,32370
+Jeep,Cherokee,Combustion,Crossover,AWD,24,180,26310
+Jeep,Compass,Combustion,SUV,AWD,27,180,23915
+Jeep,Renegade,Combustion,SUV,AWD,26,177,22850
+Jeep,Gladiator,Combustion,Truck,AWD,19,260,33565
+Kia,Soul,Combustion,Crossover,FWD,29,147,17490
+Kia,Seltos,Combustion,SUV,AWD,31,146,21990
+Kia,Sportage,Combustion,Crossover,AWD,26,181,23990
+Kia,Niro,Hybrid,Crossover,FWD,43,139,24590
+Kia,Sorento,Combustion,Crossover,AWD,23,185,26990
+Kia,Telluride,Combustion,SUV,AWD,21,291,31990
+Kia,Rio,Combustion,Sedan,FWD,36,120,15850
+Kia,Forte,Combustion,Sedan,FWD,30,147,17890
+Kia,K5,Combustion,Sedan,FWD,32,180,23490
+Kia,Stinger,Combustion,Sedan,RWD,20,255,33090
+Kia,Cadenza,Combustion,Sedan,FWD,23,290,37850
+Kia,K900,Combustion,Sedan,AWD,21,365,59900
+Kia,Niro Plug-In Hybrid,Hybrid,Crossover,FWD,46,139,29490
+Kia,Niro EV,Electric,Crossover,FWD,239,201,39090
+Kia,Rio 5-Door,Combustion,Hatchback,FWD,36,120,16790
+Kia,Sedona,Combustion,Minivan,FWD,21,276,30400
+Lamborghini,Aventador,Combustion,Sports Car,AWD,11,729,417826
+Lamborghini,Huracan,Combustion,Sports Car,AWD,15,610,208571
+Lamborghini,Urus,Combustion,SUV,AWD,14,641,218009
+Land Rover,Range Rover,Combustion,SUV,AWD,24,254,92000
+Land Rover,Range Rover Sport,Combustion,SUV,AWD,24,254,69500
+Land Rover,Range Rover Velar,Combustion,SUV,AWD,23,247,56900
+Land Rover,Range Rover Evoque,Combustion,SUV,AWD,23,246,43300
+Land Rover,Discovery,Combustion,SUV,AWD,24,246,72856
+Land Rover,Discovery Sport,Combustion,SUV,FWD,21,246,41900
+Land Rover,Defender,Combustion,SUV,AWD,19,296,46100
+Lexus,IS,Combustion,Sedan,RWD,27,241,39000
+Lexus,ES,Combustion,Sedan,AWD,26,203,39900
+Lexus,ES Hybrid,Hybrid,Sedan,AWD,44,215,41810
+Lexus,GS,Combustion,Sedan,RWD,24,311,51065
+Lexus,GS F,Combustion,Sedan,RWD,20,467,85010
+Lexus,LS,Combustion,Sedan,RWD,29,416,75450
+Lexus,LS Hybrid,Hybrid,Sedan,RWD,29,354,80010
+Lexus,UX,Combustion,SUV,RWD,33,169,32900
+Lexus,UX Hybrid,Hybrid,SUV,RWD,40,181,35100
+Lexus,NX,Combustion,SUV,RWD,25,235,37510
+Lexus,NX Hybrid,Hybrid,SUV,RWD,31,194,40060
+Lexus,RX,Combustion,SUV,AWD,24,290,45070
+Lexus,RX Hybrid,Hybrid,SUV,AWD,29,308,47720
+Lexus,GX,Combustion,SUV,RWD,17,301,53100
+Lexus,LX,Combustion,SUV,RWD,14,383,86580
+Lexus,RC,Combustion,Coupe,RWD,27,241,42120
+Lexus,RC F,Combustion,Coupe,RWD,20,472,64900
+Lexus,LC,Combustion,Coupe,RWD,19,354,92950
+Lexus,LC Hybrid,Hybrid,Coupe,RWD,30,354,97510
+Lexus,LC Convertible,Combustion,Convertible,RWD,20,471,101000
+Lincoln,Navigator,Combustion,SUV,AWD,19,450,76185
+Lincoln,Aviator,Hybrid,SUV,AWD,56,400,51100
+Lincoln,Nautilus,Combustion,Crossover,AWD,21,250,41040
+Lincoln,Corsair,Combustion,Crossover,AWD,24,250,35945
+Lincoln,Continental,Combustion,Sedan,AWD,20,305,46305
+Lincoln,MKZ,Hybrid,Sedan,AWD,45,245,36750
+Lotus,Evora,Combustion,Sports Car,RWD,20,416,96950
+Lotus,Evija,Electric,Sports Car,AWD,250,1972,2100000
+Maserati,Ghibli,Combustion,Sedan,RWD,19,345,74980
+Maserati,Levante,Combustion,Crossover,AWD,17,345,74490
+Maserati,Quattroporte,Combustion,Sedan,AWD,18,424,102190
+Maserati,GT Convertible,Combustion,Convertible,RWD,16,454,150380
+Maserati,MC20,Combustion,Sports Car,RWD,20,621,210000
+Mazda,CX-3,Combustion,Crossover,AWD,31,148,20640
+Mazda,CX-30,Combustion,Crossover,AWD,28,186,21900
+Mazda,CX-5,Combustion,Crossover,AWD,28,187,25190
+Mazda,CX-9,Combustion,Crossover,AWD,24,227,33890
+Mazda,Mazda3 Sedan,Combustion,Sedan,FWD,30,155,21500
+Mazda,Mazda3 Hatchback,Combustion,Hatchback,FWD,30,186,23700
+Mazda,Mazda6,Combustion,Sedan,FWD,26,187,24100
+Mazda,MX-5 Miata,Combustion,Convertible,RWD,29,181,26580
+Mazda,MX-5 Miata RF,Combustion,Coupe,RWD,29,181,33045
+McLaren,GT,Combustion,Sports Car,RWD,19,612,210000
+McLaren,600LT,Combustion,Sports Car,RWD,19,592,240000
+McLaren,570S,Combustion,Sports Car,RWD,19,562,192500
+McLaren,570GT,Combustion,Sports Car,RWD,19,562,202950
+McLaren,540C,Combustion,Sports Car,RWD,19,533,185000
+McLaren,620R,Combustion,Sports Car,RWD,18,610,299000
+McLaren,720S,Combustion,Sports Car,RWD,19,710,299000
+McLaren,765LT,Combustion,Sports Car,RWD,18,754,358000
+McLaren,Speedtail,Combustion,Sports Car,RWD,15,746,2000000
+McLaren,Senna,Combustion,Sports Car,RWD,16,789,1000000
+Mercedes,GLA SUV,Combustion,SUV,FWD,28,221,36230
+Mercedes,GLB SUV,Combustion,SUV,FWD,26,221,36600
+Mercedes,GLC SUV,Combustion,SUV,RWD,24,469,43200
+Mercedes,GLC Coupe,Combustion,SUV,RWD,24,385,51650
+Mercedes,GLE SUV,Combustion,SUV,RWD,22,362,54750
+Mercedes,GLE Coupe,Combustion,Coupe,AWD,24,429,76500
+Mercedes,GLS SUV,Combustion,SUV,AWD,21,362,76000
+Mercedes,G-Class SUV,Combustion,SUV,AWD,14,416,130900
+Mercedes,A-Class Sedan,Combustion,Sedan,RWD,28,188,33650
+Mercedes,C-Class Sedan,Combustion,Sedan,RWD,21,255,55950
+Mercedes,E-Class Sedan,Combustion,Sedan,RWD,25,255,54250
+Mercedes,S-Class Sedan,Combustion,Sedan,RWD,19,469,94250
+Mercedes,Mercedes-Maybach,Combustion,Sedan,RWD,16,621,173000
+Mercedes,E-Class Wagon,Combustion,Crossover,AWD,22,603,67600
+Mercedes,CLA Coupe,Combustion,Sedan,RWD,28,221,37850
+Mercedes,C-Class Coupe,Combustion,Coupe,RWD,26,255,47200
+Mercedes,E-Class Coupe,Combustion,Coupe,RWD,22,362,64950
+Mercedes,CLS Coupe,Combustion,Sedan,RWD,26,362,70300
+Mercedes,S-Class Coupe,Combustion,Coupe,RWD,22,603,130150
+Mercedes,Mercedes-AMG GT 4-Door Coupe,Combustion,Sports Car,RWD,22,630,99950
+Mercedes,Mercedes-AMG GT,Combustion,Sports Car,RWD,21,577,115900
+Mercedes,C-Class Cabriolet,Combustion,Convertible,RWD,24,255,54700
+Mercedes,E-Class Cabriolet,Combustion,Convertible,RWD,23,429,71950
+Mercedes,S-Class Cabriolet,Combustion,Convertible,RWD,22,603,138600
+Mercedes,SLC Roadster,Combustion,Coupe,RWD,27,241,49950
+Mercedes,SL Roadster,Combustion,Convertible,RWD,20,449,91000
+Mercedes,Mercedes-AMG GT,Combustion,Convertible,RWD,17,469,127900
+Mini,Cooper,Combustion,Hatchback,FWD,31,134,22400
+Mini,Cooper SE,Electric,Hatchback,FWD,110,181,29900
+Mini,Cooper Countryman,Combustion,Crossover,FWD,29,134,29100
+Mini,Cooper All4 Countryman,Combustion,Crossover,AWD,26,189,31100
+Mini,Cooper Convertible,Combustion,Convertible,FWD,30,134,27400
+Mitsubishi,Outlander PHEV,Hybrid,Crossover,AWD,74,117,36295
+Mitsubishi,Outlander,Combustion,Crossover,AWD,28,166,24895
+Mitsubishi,Eclipse Cross,Combustion,Crossover,AWD,28,152,22995
+Mitsubishi,Outlander Sport,Combustion,Crossover,AWD,27,148,22595
+Mitsubishi,Mirage G4,Combustion,Sedan,AWD,38,78,14995
+Mitsubishi,Mirage,Combustion,Hatchback,AWD,40,78,13995
+Nissan,Kicks,Combustion,Crossover,FWD,34,122,19070
+Nissan,Rogue Sport,Combustion,Crossover,AWD,28,141,23430
+Nissan,Rogue,Combustion,Crossover,AWD,30,181,25650
+Nissan,Murano,Combustion,Crossover,AWD,24,260,31730
+Nissan,Pathfinder,Combustion,Crossover,AWD,24,284,31980
+Nissan,Armada,Combustion,SUV,AWD,17,390,47500
+Nissan,Versa,Combustion,Sedan,FWD,36,122,14830
+Nissan,Sentra,Combustion,Sedan,FWD,35,149,19310
+Nissan,Altima,Combustion,Sedan,AWD,34,182,24300
+Nissan,Maxima,Combustion,Sedan,FWD,26,300,34450
+Nissan,LEAF,Electric,Hatchback,FWD,226,147,31600
+Nissan,Frontier,Combustion,Truck,AWD,21,310,26790
+Nissan,TITAN,Combustion,Truck,AWD,19,400,36550
+Nissan,TITAN XD,Combustion,Truck,AWD,18,400,45030
+Nissan,370Z,Combustion,Coupe,RWD,22,350,30090
+Nissan,GT-R,Combustion,Sports Car,AWD,19,565,113540
+Nissan,NV200 Compact Cargo,Combustion,Van,RWD,25,261,23080
+Nissan,NV Passenger,Combustion,Van,RWD,25,261,36360
+Nissan,Sentra Nismo,Combustion,Sedan,FWD,28,188,26040
+Nissan,370Z Coupe Nismo,Combustion,Sports Car,RWD,20,350,45790
+Nissan,GT-R Nismo,Combustion,Sports Car,AWD,19,600,210740
+Pagani,Huayra,Combustion,Sports Car,RWD,12,730,2600000
+Pagani,Huayra BC,Combustion,Sports Car,RWD,12,745,2550000
+Pagani,Huayra Roadster,Combustion,Sports Car,RWD,12,764,2400000
+Pagani,Huayra Roadster BC,Combustion,Sports Car,RWD,12,800,3400000
+Porsche,718 Cayman,Combustion,Sports Car,RWD,19,300,59900
+Porsche,911 Carrera,Combustion,Sports Car,RWD,20,379,99200
+Porsche,911 Carrera 4,Combustion,Sports Car,AWD,20,379,106500
+Porshe,Taycan,Electric,Sports Car,AWD,201,322,103800
+Porsche,Panamera,Combustion,Sports Car,RWD,23,330,87200
+Porsche,Panamera 4,Combustion,Sports Car,AWD,23,330,91800
+Porsche,Panamera 4 E-Hybrid,Hybrid,Sports Car,AWD,65,457,103800
+Porsche,Macan,Combustion,Crossover,AWD,21,375,52100
+Porsche,Cayenne,Combustion,Crossover,AWD,21,335,67500
+Porsche,Cayenne E-Hybrid,Hybrid,Crossover,AWD,46,455,81800
+Ram,1500 TRX,Combustion,Truck,RWD,14,702,69995
+Ram,1500,Combustion,Truck,RWD,28,305,29458
+Ram,1500 Classic,Combustion,Truck,RWD,19,305,28200
+Ram,2500,Combustion,Truck,RWD,15,410,33895
+Ram,3500,Combustion,Truck,RWD,15,410,35345
+Ram,Promaster City,Combustion,Van,FWD,25,178,24480
+Ram,Promaster,Combustion,Van,FWD,25,280,30145
+Rolls-Royce,Phantom,Combustion,Sedan,RWD,16,563,455000
+Rolls-Royce,Cullinan,Combustion,SUV,AWD,16,563,330000
+Rolls-Royce,Ghost,Combustion,Sedan,RWD,15,563,311900
+Rolls-Royce,Wraith,Combustion,Sedan,RWD,15,624,330000
+Rolls-Royce,Dawn,Combustion,Convertible,RWD,15,563,356500
+Subaru,Impreza Sedan,Combustion,Sedan,AWD,32,152,19595
+Subaru,Impreza 5-Door,Combustion,Hatchback,AWD,32,152,21700
+Subaru,Legacy,Combustion,Sedan,AWD,31,182,22745
+Subaru,Crosstrek,Combustion,Crossover,AWD,31,152,22145
+Subaru,Forester,Combustion,Crossover,AWD,30,182,24495
+Subaru,Outback,Combustion,Crossover,AWD,30,182,26645
+Subaru,Ascent,Combustion,Crossover,AWD,24,260,31995
+Subaru,BRZ,Combustion,Coupe,RWD,29,205,28845
+Subaru,WRX,Combustion,Sedan,AWD,24,268,27495
+Subaru,WRX STI,Combustion,Sports Car,AWD,19,310,36995
+Tesla,Model S,Electric,Sedan,AWD,402,778,69420
+Tesla,Model 3,Electric,Sedan,AWD,353,258,42690
+Tesla,Model X,Electric,SUV,AWD,371,778,79990
+Tesla,Model Y,Electric,Sedan,AWD,326,384,49990
+Toyota,Camry,Combustion,Sedan,AWD,35,203,24970
+Toyota,Camry Hybrid,Hybrid,Sedan,FWD,52,208,27270
+Toyota,Yaris,Combustion,Sedan,FWD,36,106,15650
+Toyota,Yaris Hatchback,Combustion,Hatchback,FWD,36,106,17750
+Toyota,Corolla,Combustion,Sedan,FWD,36,139,19925
+Toyota,Corolla Hybrid,Hybrid,Sedan,FWD,52,121,23500
+Toyota,Corolla Hatchback,Combustion,Hatchback,FWD,34,139,20565
+Toyota,Prius,Hybrid,Hatchback,FWD,52,121,24525
+Toyota,Avalon,Combustion,Sedan,FWD,28,205,35875
+Toyota,Avalon Hybrid,Hybrid,Sedan,FWD,44,205,37000
+Toyota,Mirai,Hydrogen,Sedan,FWD,312,151,58550
+Toyota,86,Combustion,Coupe,RWD,25,205,27060
+Toyota,GR Supra,Combustion,Sports Car,RWD,26,335,42990
+Toyota,Sienna,Combustion,Minivan,FWD,36,245,34460
+Toyota,Tacoma,Combustion,Truck,AWD,20,159,26150
+Toyota,Tundra,Combustion,Truck,AWD,15,381,33675
+Toyota,Highlander,Combustion,SUV,AWD,25,295,34810
+Toyota,Highlander Hybrid,Hybrid,SUV,AWD,35,243,38410
+Toyota,C-HR,Combustion,Crossover,FWD,29,144,21445
+Toyota,RAV4,Combustion,SUV,FWD,32,203,26050
+Toyota,RAV4 Hybrid,Hybrid,SUV,AWD,39,219,28500
+Toyota,Venza,Hybrid,Crossover,AWD,38,219,32470
+Toyota,4Runner,Combustion,SUV,AWD,18,270,36340
+Toyota,Sequoia,Combustion,SUV,AWD,15,381,50100
+Toyota,Land Cruiser,Combustion,SUV,AWD,15,381,85415
+Volkswagen,ID.4,Electric,SUV,AWD,250,201,39995
+Volkswagen,Atlas,Combustion,SUV,AWD,23,276,31555
+Volkswagen,Atlas Cross-Sport,Combustion,SUV,AWD,23,276,30545
+Volkswagen,Tiguan,Combustion,SUV,AWD,25,184,25245
+Volkswagen,Jetta,Combustion,Sedan,FWD,36,147,18895
+Volkswagen,Jetta GLI,Combustion,Sedan,FWD,29,228,26245
+Volkswagen,Passat,Combustion,Sedan,FWD,29,174,22995
+Volkswagen,Arteon,Combustion,Sedan,AWD,26,268,35995
+Volkswagen,Golf,Combustion,Hatchback,FWD,32,110,23195
+Volkswagen,Golf GTI,Combustion,Hatchback,FWD,28,228,28595
+Volvo,XC90,Combustion,SUV,FWD,26,250,49000
+Volvo,XC60,Combustion,Crossover,FWD,26,240,41700
+Volvo,XC40,Combustion,SUV,FWD,28,187,33700
+Volvo,V90,Combustion,Crossover,FWD,28,250,51800
+Volvo,S60,Combustion,Sedan,FWD,29,250,38950
