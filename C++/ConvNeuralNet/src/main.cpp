@@ -13,11 +13,11 @@ void readMnistFile(vector<tensor>& testData, vector<int>& expected, int numChann
 int main() {
     string placeHolder;
     int actualDataChannels = 1;
-    int numDupChannels = 3;
-    ConvNet cnn(numDupChannels, 28, 0.001, 0.9);
-    cnn.addConvLayer(9, 3, true, true);
-    cnn.addConvLayer(18, 3, true, true);
-    cnn.addDenseLayer(32, true);
+    int numDupChannels = 1;
+    ConvNet cnn(numDupChannels, 28, 0.001, 0.5);
+    cnn.addConvLayer(9, 3, true, true, "max");
+    cnn.addConvLayer(18, 3, true, true, "max");
+    cnn.addDenseLayer(128,true);
     cnn.addDenseLayer(10, false);
     cnn.printNet();
     cout << endl;
