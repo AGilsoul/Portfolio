@@ -1,0 +1,15 @@
+# ninja log v5
+0	381	6891633339808583	CMakeFiles/KNearestNeighbors.dir/src/KNNClassifier.cpp.obj	f96b85b36aa163ff
+7	505	6891633341038865	CMakeFiles/KNearestNeighbors.dir/src/main.cpp.obj	f0450e97174d9d29
+505	795	6891633343859502	KNearestNeighbors.exe	ea4a46c523711436
+0	648	6891633588575188	CMakeFiles/KNearestNeighbors.dir/src/KNNClassifier.cpp.obj	f96b85b36aa163ff
+6	653	6891633588615200	CMakeFiles/KNearestNeighbors.dir/src/main.cpp.obj	f0450e97174d9d29
+653	825	6891633590085532	KNearestNeighbors.exe	ea4a46c523711436
+1	638	6891633839081758	CMakeFiles/KNearestNeighbors.dir/src/main.cpp.obj	f0450e97174d9d29
+639	794	6891633840392049	KNearestNeighbors.exe	ea4a46c523711436
+1	638	6891634272561361	CMakeFiles/KNearestNeighbors.dir/src/main.cpp.obj	f0450e97174d9d29
+639	788	6891634273821644	KNearestNeighbors.exe	ea4a46c523711436
+0	652	6891635156370796	CMakeFiles/KNearestNeighbors.dir/src/main.cpp.obj	f0450e97174d9d29
+653	804	6891635157651081	KNearestNeighbors.exe	ea4a46c523711436
+1	621	6891635412818675	CMakeFiles/KNearestNeighbors.dir/src/main.cpp.obj	f0450e97174d9d29
+621	778	6891635414138964	KNearestNeighbors.exe	ea4a46c523711436

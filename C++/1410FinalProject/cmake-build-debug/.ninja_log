@@ -1,0 +1,27 @@
+# ninja log v5
+1	408	6891639486191786	CMakeFiles/1410FinalProject.dir/src/Car.cpp.obj	ef2a07f49dc4bdc
+12	732	6891639489412515	CMakeFiles/1410FinalProject.dir/src/main.cpp.obj	42284defecb43aea
+0	595	6891640342063154	CMakeFiles/1410FinalProject.dir/src/carFileReader.cpp.obj	e50d3ccba4eadb52
+595	924	6891640345273877	1410FinalProject.exe	40d34deb665c03e2
+1	553	6891640838295132	CMakeFiles/1410FinalProject.dir/src/carFileReader.cpp.obj	e50d3ccba4eadb52
+553	717	6891640839665436	1410FinalProject.exe	40d34deb665c03e2
+0	491	6891640863790883	CMakeFiles/1410FinalProject.dir/src/carFileReader.cpp.obj	e50d3ccba4eadb52
+492	683	6891640865331230	1410FinalProject.exe	40d34deb665c03e2
+0	411	6891640977176470	CMakeFiles/1410FinalProject.dir/src/carFileReader.cpp.obj	e50d3ccba4eadb52
+411	555	6891640978386741	1410FinalProject.exe	40d34deb665c03e2
+6	661	6891641749270691	CMakeFiles/1410FinalProject.dir/src/carFileReader.cpp.obj	e50d3ccba4eadb52
+0	736	6891641750010860	CMakeFiles/1410FinalProject.dir/src/main.cpp.obj	42284defecb43aea
+736	929	6891641751641231	1410FinalProject.exe	40d34deb665c03e2
+8	681	6891643970751968	CMakeFiles/1410FinalProject.dir/src/carFileReader.cpp.obj	e50d3ccba4eadb52
+1	790	6891643971842214	CMakeFiles/1410FinalProject.dir/src/main.cpp.obj	42284defecb43aea
+790	995	6891643973572606	1410FinalProject.exe	40d34deb665c03e2
+0	414	6891644107602851	CMakeFiles/1410FinalProject.dir/src/carFileReader.cpp.obj	e50d3ccba4eadb52
+415	637	6891644109543292	1410FinalProject.exe	40d34deb665c03e2
+0	565	6891644510743821	CMakeFiles/1410FinalProject.dir/src/carFileReader.cpp.obj	e50d3ccba4eadb52
+565	714	6891644511994099	1410FinalProject.exe	40d34deb665c03e2
+0	549	6891644863053320	CMakeFiles/1410FinalProject.dir/src/carFileReader.cpp.obj	e50d3ccba4eadb52
+550	699	6891644864303595	1410FinalProject.exe	40d34deb665c03e2
+0	827	6891648786818679	CMakeFiles/1410FinalProject.dir/src/main.cpp.obj	42284defecb43aea
+827	987	6891648788168982	1410FinalProject.exe	40d34deb665c03e2
+0	789	6891649949261056	CMakeFiles/1410FinalProject.dir/src/main.cpp.obj	42284defecb43aea
+790	940	6891649950521346	1410FinalProject.exe	40d34deb665c03e2

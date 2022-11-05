@@ -1,0 +1,24 @@
+# ninja log v5
+0	898	6891538719124449	CMakeFiles/CNN.dir/src/main.cpp.obj	afe15adfb5ce06f7
+1067	1402	6891537492907432	CNN.exe	9aa3fdbbe9e75e95
+6	1064	6891538470886457	CMakeFiles/CNN.dir/src/ConvNet.cpp.obj	f41b5d2d13fc24ba
+6	134	6891536931358772	CMakeFiles/CNN.dir/src/alg_stopwatch.cpp.obj	9f6cbf5c7659b500
+1	211	6891539173597002	build.ninja	873c0054d2373198
+6	929	6891554110133116	CMakeFiles/CNN.dir/src/ConvLayer.cpp.obj	740cfc8e4cb5f929
+0	1052	6891554111353388	CMakeFiles/CNN.dir/src/main.cpp.obj	afe15adfb5ce06f7
+11	1197	6891554112803714	CMakeFiles/CNN.dir/src/ConvNet.cpp.obj	f41b5d2d13fc24ba
+1197	1354	6891554114104001	CNN.exe	4150e96feca86cae
+0	858	6891554513484127	CMakeFiles/CNN.dir/src/main.cpp.obj	afe15adfb5ce06f7
+858	1010	6891554514774420	CNN.exe	4150e96feca86cae
+8	1367	6891569214832171	CMakeFiles/CNN.dir/src/ConvNet.cpp.obj	f41b5d2d13fc24ba
+0	754	6891569362025694	CMakeFiles/CNN.dir/src/main.cpp.obj	afe15adfb5ce06f7
+754	1045	6891569364556262	CNN.exe	4150e96feca86cae
+1	929	6891569955629636	CMakeFiles/CNN.dir/src/main.cpp.obj	afe15adfb5ce06f7
+929	1127	6891569957330028	CNN.exe	4150e96feca86cae
+8	1003	6891617973448498	CMakeFiles/CNN.dir/src/ConvLayer.cpp.obj	740cfc8e4cb5f929
+1	1092	6891617974338695	CMakeFiles/CNN.dir/src/main.cpp.obj	afe15adfb5ce06f7
+14	1247	6891617975889048	CMakeFiles/CNN.dir/src/ConvNet.cpp.obj	f41b5d2d13fc24ba
+1247	1542	6891617978479625	CNN.exe	4150e96feca86cae
+1	1264	6891629121269790	CMakeFiles/CNN.dir/src/main.cpp.obj	afe15adfb5ce06f7
+10	1283	6891629121459829	CMakeFiles/CNN.dir/src/ConvNet.cpp.obj	f41b5d2d13fc24ba
+1284	1508	6891629123400271	CNN.exe	4150e96feca86cae
