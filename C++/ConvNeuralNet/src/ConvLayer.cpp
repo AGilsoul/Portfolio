@@ -4,6 +4,9 @@
 
 #include "../include/ConvLayer.h"
 
+using std::cout;
+using std::endl;
+
 // General methods
 void multTensors(tensor& t1, tensor& t2) {
     for (int channelIndex = 0; channelIndex < t1.size(); channelIndex++) {
@@ -159,9 +162,26 @@ void normalize(vector<tensor>& dataIn, vector<double> minMaxRanges) {
 }
 
 
-// Hidden Layer Methods
+// Dense Layer Methods
+DenseLayer::DenseLayer() {}
+
 DenseLayer::DenseLayer(int numNeurons, int numInputs, double lr, double m, bool hidden): numNeurons(numNeurons), numInputs(numInputs), lr(lr), m(m), hidden(hidden) {
     generateWeights();
+    this->prevWeightGradients = allocMatrix(numNeurons, numInputs);
+    this->prevBiasGradients = vector<double>(numNeurons);
+    this->prevBiasGradients = vector<double>(numNeurons);
+    this->activatedOutputs = vector<double>(numNeurons);
+    resetDeltas();
+}
+
+void DenseLayer::loadLayer(matrix& weights, vector<double>& biases, int numNeurons, int numWeightsPerNeuron, double lr, double m, bool hidden) {
+    this->weights = weights;
+    this->biases = biases;
+    this->numNeurons = numNeurons;
+    this->numInputs = numWeightsPerNeuron;
+    this->lr = lr;
+    this->m = m;
+    this->hidden = hidden;
     this->prevWeightGradients = allocMatrix(numNeurons, numInputs);
     this->prevBiasGradients = vector<double>(numNeurons);
     this->prevBiasGradients = vector<double>(numNeurons);
@@ -214,6 +234,18 @@ void DenseLayer::update() {
         this->biases[n] -= this->biasGradients[n];
         this->prevBiasGradients[n] = this->biasGradients[n];
     }
+}
+
+void DenseLayer::setLr(double lr) {
+    this->lr = lr;
+}
+
+void DenseLayer::setWeights(matrix& weights) {
+    this->weights = weights;
+}
+
+void DenseLayer::setBiases(vector<double> biases) {
+    this->biases = biases;
 }
 
 bool DenseLayer::getHidden() {
@@ -345,83 +377,73 @@ matrix DenseLayer::allocRandMatrix(int r, int c, double lower, double upper) {
 // Convolution Layer Methods
 ConvLayer::ConvLayer() {}
 
-ConvLayer::ConvLayer(int numKernels, int kernelSize, int inputChannels, int inputDim, double lr, double m, bool padding, int poolType): numKernels(numKernels), kernelSize(kernelSize), inputChannels(inputChannels), inputDim(inputDim), lr(lr), m(m), padding(padding), poolType(poolType) {
+ConvLayer::ConvLayer(int numKernels, int kernelDim, int inputChannels, int inputDim, double lr, double m, bool padding, int poolType): numKernels(numKernels), kernelDim(kernelDim), inputChannels(inputChannels), inputDim(inputDim), lr(lr), m(m), padding(padding), poolType(poolType) {
     // set up rng
-    this->unif = uniform_real_distribution<double>(-1, 1);
-    this->rng.seed(std::chrono::system_clock::now().time_since_epoch().count());
+    unif = uniform_real_distribution<double>(-1, 1);
     // set pad width for kernel input padding
     if (padding) {
-        this->padWidth = ceil(double(kernelSize) / 2);
+        padWidth = ceil(double(kernelDim) / 2);
     }
     else {
-        this->padWidth = 0;
+        padWidth = 0;
     }
-    // calc output dimensions of kernel matrices
-    this->kernelOutputDim = (inputDim + 2 * padWidth - kernelSize) + 1;
-    // re-calc output dimensions if pooling enabled
-    if (poolType != 0) {
-        // if output dimension divisible by 2
-        if (this->kernelOutputDim % 2 != 0) {
-            this->outputDim = int((this->kernelOutputDim + 1) / 2);
-        }
-            // else
-        else {
-            this->outputDim = int(this->kernelOutputDim / 2);
-        }
-        // allocate space for pool indexing tensor
-        poolIndices = allocPoolTensor(numKernels, this->outputDim);
-        this->outputs = allocTensor(numKernels, this->outputDim);
-    }
-    else {
-        this->outputDim = kernelOutputDim;
-    }
-    this->kernelPrevGradients = allocTensVec(numKernels, inputChannels, this->kernelSize);
-    // allocate activation deltas
-    this->activationDeltas = allocTensor(numKernels, this->kernelOutputDim);
-    // allocate space for output kernel output tensors
-    this->kernelSumOutputs = allocTensor(numKernels, this->kernelOutputDim);
-    this->kernelActivatedOutputs = allocTensor(numKernels, this->kernelOutputDim);
+    initLayer();
     // generate kernel values
-    this->kernels = allocRandomTensVec(numKernels, inputChannels, kernelSize);
+    kernels = allocRandomTensVec(numKernels, inputChannels, kernelDim);
+    resetDeltas();
+    unif = uniform_real_distribution<double>(0, 1);
+}
+
+void ConvLayer::loadLayer(vector<tensor>& kernels, int numKernels, int kernelDim, int inputChannels, int inputDim, double lr, double m, int padWidth, int poolType) {
+    this->kernels = kernels;
+    this->numKernels = numKernels;
+    this->kernelDim = kernelDim;
+    this->inputChannels = inputChannels;
+    this->inputDim = inputDim;
+    this->lr = lr;
+    this->m = m;
+    this->padWidth = padWidth;
+    this->padding = (padWidth != 0);
+    this->poolType = poolType;
+    initLayer();
     resetDeltas();
     this->unif = uniform_real_distribution<double>(0, 1);
 }
 
 tensor ConvLayer::propagate(tensor dataIn) {
-    this->kernelSumOutputs = allocTensor(numKernels, this->kernelOutputDim);
+    kernelSumOutputs = allocTensor(numKernels, this->kernelOutputDim);
     // adjust input with padding if enabled
-    if (this->padding) {
+    if (padding) {
         dataIn = addPadding(dataIn, padWidth);
     }
-    this->inputs = dataIn;
-    this->inputDim = dataIn[0].size();
+    inputs = dataIn;
+
     // for every kernel
-    for (int kernelIndex = 0; kernelIndex < this->numKernels; kernelIndex++) {
-        // for each channel in the kernel
-        for (int channelIndex = 0; channelIndex < this->inputChannels; channelIndex++) {
-            // for every row in the output
-            for (int row = 0; row < this->kernelOutputDim; row++) {
-                // for every col in the output
-                for (int col = 0; col < this->kernelOutputDim; col++) {
+    for (int kernelIndex = 0; kernelIndex < numKernels; kernelIndex++) {
+        // for every row in the output
+        for (int row = 0; row < kernelOutputDim; row++) {
+            // for every col in the output
+            for (int col = 0; col < kernelOutputDim; col++) {
+                // for each channel in the kernel
+                for (int channelIndex = 0; channelIndex < inputChannels; channelIndex++) {
                     // get kernel sums
-                    for (int kRow = 0; kRow < this->kernelSize; kRow++) {
-                        for (int kCol = 0; kCol < this->kernelSize; kCol++) {
-                            this->kernelSumOutputs[kernelIndex][row][col] += dataIn[channelIndex][row + kRow][col + kCol] * this->kernels[kernelIndex][channelIndex][kRow][kCol];
+                    for (int kRow = 0; kRow < kernelDim; kRow++) {
+                        for (int kCol = 0; kCol < kernelDim; kCol++) {
+                            kernelSumOutputs[kernelIndex][row][col] += dataIn[channelIndex][row + kRow][col + kCol] * kernels[kernelIndex][channelIndex][kRow][kCol];
                         }
                     }
                 }
             }
         }
     }
-
-    this->ReLu();
+    ReLu();
     if (poolType == 0) {
-        this->outputs = kernelActivatedOutputs;
+        outputs = kernelActivatedOutputs;
     }
     else {
-        this->pool(kernelActivatedOutputs);
+        pool(kernelActivatedOutputs);
     }
-    return this->outputs;
+    return outputs;
 }
 
 tensor ConvLayer::backPropagate(const tensor& nextDeltas) {
@@ -471,22 +493,22 @@ tensor ConvLayer::miniBatchBackPropagate(const tensor& nextDeltas, int batchSize
 void ConvLayer::update() {
     for (int kernelIndex = 0; kernelIndex < numKernels; kernelIndex++) {
         for (int channelIndex = 0; channelIndex < inputChannels; channelIndex++) {
-            for (int row = 0; row < kernelSize; row++) {
-                for (int col = 0; col < kernelSize; col++) {
-                    this->kernels[kernelIndex][channelIndex][row][col] -= this->kernelGradients[kernelIndex][channelIndex][row][col];
-                    this->kernelPrevGradients[kernelIndex][channelIndex][row][col] = this->kernelGradients[kernelIndex][channelIndex][row][col];
+            for (int kRow = 0; kRow < kernelDim; kRow++) {
+                for (int kCol = 0; kCol < kernelDim; kCol++) {
+                    kernels[kernelIndex][channelIndex][kRow][kCol] -= kernelGradients[kernelIndex][channelIndex][kRow][kCol];
+                    kernelPrevGradients[kernelIndex][channelIndex][kRow][kCol] = kernelGradients[kernelIndex][channelIndex][kRow][kCol];
                 }
             }
         }
     }
 }
 
-vector<tensor> ConvLayer::getKernels() {
-    return kernels;
+void ConvLayer::setLr(double lr) {
+    this->lr = lr;
 }
 
-void ConvLayer::setKernels(vector<tensor> kerns) {
-    kernels = kerns;
+vector<tensor> ConvLayer::getKernels() {
+    return kernels;
 }
 
 int ConvLayer::getNumKernels() const {
@@ -514,11 +536,11 @@ void ConvLayer::setInputChannels(int channelCount) {
 }
 
 int ConvLayer::getKernelDim() const {
-    return kernelSize;
+    return kernelDim;
 }
 
 void ConvLayer::setKernelDim(int kDim) {
-    kernelSize = kDim;
+    kernelDim = kDim;
 }
 
 int ConvLayer::getOutputDim() const {
@@ -538,17 +560,50 @@ void ConvLayer::setPadWidth(int pWidth) {
 }
 
 void ConvLayer::resetDeltas() {
-    kernelGradients = allocTensVec(numKernels, inputChannels, this->kernelSize);
+    kernelGradients = allocTensVec(numKernels, inputChannels, kernelDim);
+}
+
+void ConvLayer::initLayer() {
+    // set up rng
+    rng.seed(std::chrono::system_clock::now().time_since_epoch().count());
+    // calc output dimensions of kernel matrices
+    kernelOutputDim = (inputDim + 2 * padWidth - kernelDim) + 1;
+    // re-calc output dimensions if pooling enabled
+    if (poolType != 0) {
+        // if output dimension divisible by 2
+        if (kernelOutputDim % 2 != 0) {
+            outputDim = int((kernelOutputDim + 1) / 2);
+        }
+            // else
+        else {
+            outputDim = int(kernelOutputDim / 2);
+        }
+        // allocate space for pool indexing tensor
+        poolIndices = allocPoolTensor(numKernels, outputDim);
+        outputs = allocTensor(numKernels, outputDim);
+    }
+    else {
+        outputDim = kernelOutputDim;
+    }
+    kernelPrevGradients = allocTensVec(numKernels, inputChannels, kernelDim);
+    // allocate activation deltas
+    activationDeltas = allocTensor(numKernels, kernelOutputDim);
+    // allocate space for output kernel output tensors
+    kernelSumOutputs = allocTensor(numKernels, kernelOutputDim);
+    kernelActivatedOutputs = allocTensor(numKernels, kernelOutputDim);
 }
 
 void ConvLayer::updateKernels() {
     for (int kernelIndex = 0; kernelIndex < numKernels; kernelIndex++) {
         for (int channelIndex = 0; channelIndex < inputChannels; channelIndex++) {
-            for (int row = 0; row < kernelSize; row++) {
-                for (int col = 0; col < kernelSize; col++) {
-                    this->kernelGradients[kernelIndex][channelIndex][row][col] = this->kernelDeltas[kernelIndex][channelIndex][row][col] * lr + this->kernelPrevGradients[kernelIndex][channelIndex][row][col] * m;
+            for (int kRow = 0; kRow < kernelDim; kRow++) {
+                for (int kCol = 0; kCol < kernelDim; kCol++) {
+                    kernelGradients[kernelIndex][channelIndex][kRow][kCol] = kernelDeltas[kernelIndex][channelIndex][kRow][kCol] * lr + kernelPrevGradients[kernelIndex][channelIndex][kRow][kCol] * m;
                 }
             }
+        }
+        for (int row = 0; row < kernelOutputDim; row++) {
+            for (int col = 0; col < kernelOutputDim; col++) {}
         }
     }
 }
@@ -556,8 +611,8 @@ void ConvLayer::updateKernels() {
 void ConvLayer::miniUpdateKernels(int batchSize) {
     for (int kernelIndex = 0; kernelIndex < numKernels; kernelIndex++) {
         for (int channelIndex = 0; channelIndex < inputChannels; channelIndex++) {
-            for (int row = 0; row < kernelSize; row++) {
-                for (int col = 0; col < kernelSize; col++) {
+            for (int row = 0; row < kernelDim; row++) {
+                for (int col = 0; col < kernelDim; col++) {
                     this->kernelGradients[kernelIndex][channelIndex][row][col] += this->kernelDeltas[kernelIndex][channelIndex][row][col] / batchSize;
                 }
             }
@@ -566,17 +621,17 @@ void ConvLayer::miniUpdateKernels(int batchSize) {
 }
 
 void ConvLayer::kernelDeriv() {
-    this->kernelDeltas = allocTensVec(numKernels, inputChannels, this->kernelSize);
+    kernelDeltas = allocTensVec(numKernels, inputChannels, kernelDim);
     for (int kernelIndex = 0; kernelIndex < numKernels; kernelIndex++) {
-        for (int channelIndex = 0; channelIndex < inputChannels; channelIndex++) {
-            for (int row = 0; row < kernelOutputDim; row++) {
-                for (int col = 0; col < kernelOutputDim; col++) {
-                    // if deltas are non-zero
-                    if (this->activationDeltas[kernelIndex][row][col] != 0) {
+        for (int row = 0; row < kernelOutputDim; row++) {
+            for (int col = 0; col < kernelOutputDim; col++) {
+                // if deltas are non-zero
+                if (activationDeltas[kernelIndex][row][col] != 0) {
+                    for (int channelIndex = 0; channelIndex < inputChannels; channelIndex++) {
                         // add all values in the kernel range
-                        for (int kRow = 0; kRow < kernelSize; kRow++) {
-                            for (int kCol = 0; kCol < kernelSize; kCol++) {
-                                this->kernelDeltas[kernelIndex][channelIndex][kRow][kCol] += this->activationDeltas[kernelIndex][row][col] * this->inputs[channelIndex][row + kRow][col + kCol];
+                        for (int kRow = 0; kRow < kernelDim; kRow++) {
+                            for (int kCol = 0; kCol < kernelDim; kCol++) {
+                                kernelDeltas[kernelIndex][channelIndex][kRow][kCol] += activationDeltas[kernelIndex][row][col] * inputs[channelIndex][row + kRow][col + kCol];
                             }
                         }
                     }
@@ -589,17 +644,16 @@ void ConvLayer::kernelDeriv() {
 void ConvLayer::inputDeriv() {
     this->inputDeltas = allocTensor(inputChannels, inputDim);
     for (int kernelIndex = 0; kernelIndex < numKernels; kernelIndex++) {
-        for (int row = 0; row < kernelOutputDim; row++) {
-            for (int col = 0; col < kernelOutputDim; col++) {
+        for (int row = padWidth; row < kernelOutputDim - padWidth; row++) {
+            for (int col = padWidth; col < kernelOutputDim - padWidth; col++) {
                 if (this->activationDeltas[kernelIndex][row][col] != 0) {
                     for (int channelIndex = 0; channelIndex < inputChannels; channelIndex++) {
-                        for (int kRow = 0; kRow < kernelSize; kRow++) {
-                            for (int kCol = 0; kCol < kernelSize; kCol++) {
-                                this->inputDeltas[channelIndex][row + kRow][col + kCol] += this->kernels[kernelIndex][channelIndex][kRow][kCol] * this->activationDeltas[kernelIndex][row][col];
+                        for (int kRow = 0; kRow < kernelDim; kRow++) {
+                            for (int kCol = 0; kCol < kernelDim; kCol++) {
+                                this->inputDeltas[channelIndex][row + kRow - padWidth][col + kCol - padWidth] += this->kernels[kernelIndex][channelIndex][kRow][kCol] * this->activationDeltas[kernelIndex][row][col];
                             }
                         }
                     }
-
                 }
             }
         }
@@ -607,10 +661,10 @@ void ConvLayer::inputDeriv() {
 }
 
 void ConvLayer::ReLu() {
-    for (int kernelIndex = 0; kernelIndex < this->numKernels; kernelIndex++) {
-        for (int row = 0; row < this->kernelOutputDim; row++) {
-            for (int col = 0; col < this->kernelOutputDim; col++) {
-                this->kernelActivatedOutputs[kernelIndex][row][col] = max({0.0, this->kernelSumOutputs[kernelIndex][row][col]});
+    for (int kernelIndex = 0; kernelIndex < numKernels; kernelIndex++) {
+        for (int row = 0; row < kernelOutputDim; row++) {
+            for (int col = 0; col < kernelOutputDim; col++) {
+                kernelActivatedOutputs[kernelIndex][row][col] = max({0.0, kernelSumOutputs[kernelIndex][row][col]});
             }
         }
     }
@@ -720,6 +774,18 @@ void ConvLayer::poolDeriv(const tensor& deltas) {
     }
 }
 
+matrix ConvLayer::allocRandomMatrix(int r, int c) {
+    matrix curChannel(r);
+    for (auto & row : curChannel) {
+        vector<double> curRow(c);
+        for (double & col : curRow) {
+            col = unif(rng);
+        }
+        row = curRow;
+    }
+    return curChannel;
+}
+
 tensor ConvLayer::allocRandomTensor(int numKernels, int dim) {
     tensor resTensor(numKernels);
     for (auto & kernelIndex : resTensor) {
@@ -736,10 +802,10 @@ tensor ConvLayer::allocRandomTensor(int numKernels, int dim) {
     return resTensor;
 }
 
-vector<tensor> ConvLayer::allocRandomTensVec(int numChannels, int numKernels, int dim) {
-    vector<tensor> resTensorVec(numChannels);
+vector<tensor> ConvLayer::allocRandomTensVec(int numKernels, int numChannels, int dim) {
+    vector<tensor> resTensorVec(numKernels);
     for (auto & tensIndex : resTensorVec) {
-        tensor curTensor(numKernels);
+        tensor curTensor(numChannels);
         for (auto & matIndex : curTensor) {
             matrix curMat(dim);
             for (auto & row: curMat) {

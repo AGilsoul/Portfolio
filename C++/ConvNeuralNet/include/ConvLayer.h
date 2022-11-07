@@ -22,6 +22,10 @@ using std::uniform_real_distribution;
 using std::default_random_engine;
 using std::max;
 using std::exception;
+using std::ifstream;
+using std::ios;
+using std::getline;
+using std::stod;
 
 /**
  * Element-wise multiplication of two tensors
@@ -104,6 +108,7 @@ void normalize(vector<tensor>& dataIn, vector<double> minMaxRanges);
  */
 class DenseLayer {
 public:
+    DenseLayer();
     /**
      * DenseLayer constructor, allocates random weights/biases and gradient matrices/vectors
      *
@@ -114,6 +119,8 @@ public:
      * @param hidden if this layer is a hidden layer
      */
     DenseLayer(int numNeurons, int numInputs, double lr, double m, bool hidden);
+    void loadLayer(matrix& weights, vector<double>& biases, int numNeurons, int numWeightsPerNeuron, double lr, double m, bool hidden);
+
     /**
      * Forward propagate data through the layer
      *
@@ -146,6 +153,11 @@ public:
      * Returns true if layer is hidden, else false
      * @return bool indicating if hidden
      */
+
+    void setLr(double lr);
+    void setWeights(matrix& weights);
+
+    void setBiases(vector<double> biases);
     bool getHidden();
     /**
      * Returns number of weights
@@ -278,7 +290,8 @@ public:
      * @param padding if padding on layer inputs
      * @param poolType type of pooling
      */
-    ConvLayer(int numKernels, int kernelSize, int inputChannels, int inputDim, double lr, double m, bool padding, int poolType);
+    ConvLayer(int numKernels, int kernelDim, int inputChannels, int inputDim, double lr, double m, bool padding, int poolType);
+    void loadLayer(vector<tensor>& kernels, int numKernels, int kernelDim, int inputChannels, int inputDim, double lr, double m, int padWidth, int poolType);
     /**
      * Forward propagates dataIn through layer
      *
@@ -309,6 +322,7 @@ public:
      * Returns vector of tensors containing all kernels of layer
      * @return layer kernels vector
      */
+    void setLr(double lr);
     vector<tensor> getKernels();
     /**
      * Set value of all kernels of layer
@@ -381,6 +395,7 @@ public:
     void resetDeltas();
 
 private:
+    void initLayer();
     /**
      * Updates kernel gradients
      */
@@ -422,6 +437,14 @@ private:
      */
     void poolDeriv(const tensor& deltas);
     /**
+     * Allocates a random r x c matrix
+     *
+     * @param r rows
+     * @param c columns
+     * @return r x c matrix
+     */
+    matrix allocRandomMatrix(int r, int c);
+    /**
      * Allocates a random numKernels x dim x dim tensor
      *
      * @param numKernels number of kernels in tensor
@@ -432,12 +455,12 @@ private:
     /**
      * Allocates a random vector of size(numChannels)
      *
-     * @param numChannels number of channels in vector
      * @param numKernels number of kernels per channel
+     * @param numChannels number of channels in vector
      * @param dim kernel dimensions
-     * @return random vector of size(numChannels) containing numKernels x dim x dim tensors
+     * @return random vector of size(numKernels) containing numChannels x dim x dim tensors
      */
-    vector<tensor> allocRandomTensVec(int numChannels, int numKernels, int dim);
+    vector<tensor> allocRandomTensVec(int numKernels, int numChannels, int dim);
     /**
      * Allocates a vector of size(numKernels) to contain pooling values
      *
@@ -446,6 +469,8 @@ private:
      * @return vector of tensors to contain pooling values
      */
     vector<intTensor> allocPoolTensor(int numKernels, int dim);
+
+
 
     //Private Variables
     vector<tensor> kernels;
@@ -465,7 +490,7 @@ private:
     uniform_real_distribution<double> unif;
     // random engine
     default_random_engine rng;
-    int kernelSize;
+    int kernelDim;
     int numKernels;
     int inputDim;
     int inputChannels;

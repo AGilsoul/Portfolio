@@ -11,14 +11,19 @@ using std::ios;
 void readMnistFile(vector<tensor>& testData, vector<int>& expected, int numChannels=1, int numDuplicationChannels=1);
 
 int main() {
+
     string placeHolder;
     int actualDataChannels = 1;
     int numDupChannels = 1;
-    ConvNet cnn(numDupChannels, 28, 0.001, 0.5);
-    cnn.addConvLayer(9, 3, true, true, "max");
-    cnn.addConvLayer(18, 3, true, true, "max");
-    cnn.addDenseLayer(128,true);
-    cnn.addDenseLayer(10, false);
+
+    //ConvNet cnn(numDupChannels, 28, 0.001, 0.9);
+    //cnn.addConvLayer(9, 3, true, true, "max");
+    //cnn.addConvLayer(18, 3, true, true, "max");
+    //cnn.addDenseLayer(128,true);
+    //cnn.addDenseLayer(10, false);
+
+    cout << "Loading Network..." << endl;
+    ConvNet cnn("../res/CNNModel.csv");
     cnn.printNet();
     cout << endl;
 
@@ -28,19 +33,7 @@ int main() {
     readMnistFile(data, labels, actualDataChannels, numDupChannels);
 
     cout << "Randomizing Data..." << endl;
-    vector<int> indexes(data.size());
-    for (int i = 0; i < data.size(); ++i)
-        indexes[i] = i;
-
-    std::random_shuffle(indexes.begin(), indexes.end());
-    vector<tensor> newData(data.size());
-    vector<int> newExpect(data.size());
-    for (unsigned int i = 0; i < data.size(); i++) {
-        newData[i] = data[indexes[i]];
-        newExpect[i] = labels[indexes[i]];
-    }
-    data = newData;
-    labels = newExpect;
+    cnn.shuffleData(data, labels);
 
     cout << "Normalizing..." << endl;
     normalize(data, {{0,255}});
@@ -48,14 +41,14 @@ int main() {
     vector<int> trainLabels(labels.begin(), labels.begin() + 40000);
     vector<tensor> testData(data.begin() + 40000, data.end());
     vector<int> testLabels(labels.begin() + 40000, labels.end());
-    cout << "Fitting Model..." << endl;
-    cnn.fitModel(trainData, trainLabels, 5, 1, true);
+    //cout << "Fitting Model..." << endl;
+    //cnn.fitModel(trainData, trainLabels, 5, 1, true);
     cout << endl << "Testing Model..." << endl;
     auto res = cnn.eval(testData, testLabels) * 100;
     cout << endl << "Test Accuracy: " << setprecision(4) << res << "%" << endl;
-    cout << endl << "Saving..." << endl;
 
     /*
+    cout << endl << "Saving..." << endl;
     bool saved = cnn.save("CNNModel.csv");
     if (saved) {
         cout << "Save Successful" << endl;

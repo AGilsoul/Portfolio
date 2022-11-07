@@ -30,6 +30,7 @@ using std::endl;
  */
 class ConvNet {
 public:
+    ConvNet(string fileName);
     /**
      * Constructor for ConvNet class
      * just assigns private variables
@@ -100,20 +101,22 @@ public:
      */
     void printNet();
 
+    void shuffleData(vector<tensor>& data, vector<int>& labels);
+
     /*
      * file format:
      * learningRate,momentum,numConnections
      * numberConvolutionLayers,numberDenseLayers,inputDim,inputChannels
      * //for every conv layer:
      * numKernels,kernelDim,inputChannels,inputDim,padWidth,poolingType
-     * *all kernels
+     * *all kernel weights
      * //for every dense layer
      * numNeurons,numWeightsPerNeuron,Hidden?(T/F)
      * *all weights
      * *all biases
      */
     /**
-     * Saves neural network weights and biases to text file to be loaded in later
+     * Saves neural network weights and biases to csv file to be loaded in later
      *
      * @param fileName name of file to save to
      * @return true if the file was successfully saved, else false
@@ -121,7 +124,15 @@ public:
     bool save(string fileName);
 
 
+
 private:
+    /**
+     * Loads neural network weights and biases from a saved model in a csv file
+     *
+     * @param fileName name of file to be loaded
+     * @return true if the file was successfully loaded, else false
+     */
+    bool load(string fileName);
     /**
      * Back propagation training algorithm
      *
@@ -142,6 +153,10 @@ private:
     /**
      * Uses multithreading to print a bar indicating training progress
      */
+    void readHyperParams(ifstream& fin);
+    vector<int> readOverArch(ifstream& fin);
+    void loadConvLayers(ifstream& fin, int numLayers);
+    void loadDenseLayers(ifstream& fin, int numLayers);
     void progressBar();
     /**
      * Called by progressBar to actually print progress bar to console
@@ -167,13 +182,15 @@ private:
     // Progress goal for progress bar
     shared_ptr<double> progressGoal = make_shared<double>(0.0);
     // Progress bar width
-    int barSize = 70;
+    int barSize = 40;
     // Training status
     shared_ptr<bool> doneTraining = make_shared<bool>(false);
     // Loading indicator strings
     string loading[4] = {" | ", " / ", " - ", " \\ "};
     // Learning rate
     double lr;
+    double maxLr;
+    double minLr;
     // Momentum
     double m;
     // Number of neuron connections
